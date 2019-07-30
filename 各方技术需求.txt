@@ -1,0 +1,44 @@
+一、微博爬虫
+
+https://github.com/dataabc/weiboSpider  通过cookie登陆
+https://github.com/nghuyong/WeiboSpider  通过账号登陆
+
+https://yq.aliyun.com/articles/315685  cookie登陆代码
+
+
+二、scrapy 爬虫
+
+https://github.com/LiuRoy/zhihu_spider/blob/master/zhihu/zhihu/spiders/profile.py
+先爬一个页面，再根据第一个页面信息爬第二个页面
+
+https://github.com/LiuXingMing/SinaSpider/blob/master/Sina_spider1/Sina_spider1/spiders/spiders.py
+爬完一个又一个
+
+怎么爬取不同的网址
+
+
+	
+	 response.xpath("//div[@class='col-md-8'][2]/div[1]/div[@class='list-group']/a/@href")
+	 
+	 //*[@id="redtag"]/a/span
+	 
+	 //div[@class="post-content"]/p[1]/*[not(img)]
+	 //div/*[not(name='h3')]/text()
+	 
+	 /html/body/div[2]/div/div[1]/div[1]/div/div[2]/div/text()   链接地址
+	 /html/body/div[2]/div/div[1]/div[1]/div/div[2]/text()  
+	 
+	 22000   
+	 
+	 //div[@class="post-content"]/p[1]/descendant-or-self::text()  后续节点和本身节点，结果是一整块分成N块
+	  //div[@class="post-content"]/p[1][descendant-or-self::text()]  后续节点和本身节点，结果是一整块
+	  
+	 //div[@class="post-content"]/p[1]/descendant::text()  所有后续节点
+	 //div[@class="post-content"]/p[1]/descendant::a  所有的a节点
+	 //div[@class="post-content"]/p[1]/descendant-or-self::a/@href
+	 
+	 http://www.0818tuan.com/xbhd/236036.html
+	  //div[@class="post-content"]/p/descendant-or-self::*/text()    这种方法顺序不对，会先p的文本，再a的文本
+	  //div[@class="post-content"]/p/descendant-or-self::text()   这样就是按顺序来，p文本，a文本，p文本，a文本
+	  //div[@class="post-content"]/p/descendant-or-self::*[text()]  这样也是按顺序来的
+	  
