@@ -16,6 +16,12 @@ https://github.com/LiuXingMing/SinaSpider/blob/master/Sina_spider1/Sina_spider1/
 
 怎么爬取不同的网址
 
+三.短链接
+http://tool.chinaz.com/tools/sinadwz.aspx 批量新浪短链在线生成
+https://dwz.cn/  百度短链接
+
+四、图片拼接
+
 
 	
 	 response.xpath("//div[@class='col-md-8'][2]/div[1]/div[@class='list-group']/a/@href")
